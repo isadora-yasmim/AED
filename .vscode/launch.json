@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/AEDn/AED",
-      "program": "c:/AEDn/AED/build/Debug/outDebug",
+      "cwd": "c:/AEDn/AED/estudos/listas",
+      "program": "c:/AEDn/AED/estudos/listas/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

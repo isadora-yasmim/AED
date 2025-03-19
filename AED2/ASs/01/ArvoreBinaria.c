@@ -1,5 +1,5 @@
 /*Isadora Yasmim da Silva - 202403076*/
-/*As funções consultaIntervalarArvBinIter e consultaIntervalarArvBinRec se encontram  a partir da linha 316*/
+/*As funcoes consultaIntervalarArvBinIter e consultaIntervalarArvBinRec se encontram  a partir da linha 316*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,8 +30,8 @@ void libera_ArvBin(ArvBin* raiz)
 {
 	if (raiz == NULL)
 		return;
-	libera_NO(*raiz);	// Desaloca memória de cada nó
-	free(raiz);	// Desaloca memória da raiz
+	libera_NO(*raiz);	// Desaloca memï¿½ria de cada nï¿½
+	free(raiz);	// Desaloca memï¿½ria da raiz
 }
 
 int insere_ArvBin(ArvBin* raiz, int valor)
@@ -58,7 +58,7 @@ int insere_ArvBin(ArvBin* raiz, int valor)
 			ant = atual;
 			if (valor == atual->info){
 				free(novo);
-				return 0;	// Elemento já existe na árvore
+				return 0;	// Elemento jï¿½ existe na ï¿½rvore
 			}
 
 			if (valor > atual->info)
@@ -97,19 +97,19 @@ int insere_EmLargura(ArvBin *raiz, int valor)
 
 		do {
 			if (consulta_Fila(f, &q)) {
-				remove_Fila(f); // Retira nó q da fila
+				remove_Fila(f); // Retira nï¿½ q da fila
 				if (q != NULL) {
 					if (q->esq == NULL) {
 						q->esq = novo;
 						break;
 					}
 
-					insere_Fila(f, q->esq); // Insere subárvore esq. na fila
+					insere_Fila(f, q->esq); // Insere subï¿½rvore esq. na fila
 					if (q->dir == NULL) {
 						q->dir = novo;
 						break;
 					}
-					insere_Fila(f, q->dir); // Insere subárvore dir. na fila
+					insere_Fila(f, q->dir); // Insere subï¿½rvore dir. na fila
 				}
 			}
 		} while (!Fila_vazia(f));  
@@ -133,8 +133,8 @@ struct NO* remove_atual(struct NO* atual)
 		no1 = no2;
 		no2 = no2->dir;
 	}
-	// no2 é o nó anterior a r na ordem e-r-d
-	// no1 é o pai de no2
+	// no2 ï¿½ o nï¿½ anterior a r na ordem e-r-d
+	// no1 ï¿½ o pai de no2
 	if (no1 != atual){
 		no1->dir = no2->esq;
 		no2->esq = atual->esq;
@@ -203,11 +203,11 @@ int totalNO_ArvBin_Iter(ArvBin *raiz)
 	int cont = 0;
 	do {
 		if (consulta_Fila(f, &q)) {
-			remove_Fila(f); // Retira nó q da fila
+			remove_Fila(f); // Retira nï¿½ q da fila
 			if (q != NULL) {
 				cont++;
-				insere_Fila(f, q->esq); // Insere sub-árvore esq. na fila
-				insere_Fila(f, q->dir); // Insere sub-árvore dir. na fila
+				insere_Fila(f, q->esq); // Insere sub-ï¿½rvore esq. na fila
+				insere_Fila(f, q->dir); // Insere sub-ï¿½rvore dir. na fila
 			}
 		}
 	} while (!Fila_vazia(f));  
@@ -241,7 +241,7 @@ int altura_ArvBin_Iter(ArvBin *raiz)
 
 	do {
 		if (consulta_Fila(f, &q)) {
-			remove_Fila(f); // Retira nó q da fila 
+			remove_Fila(f); // Retira nï¿½ q da fila 
 			alturaJaCalc = 0;
 			if (q != NULL) {
 				if (q->esq != NULL) {
@@ -251,7 +251,7 @@ int altura_ArvBin_Iter(ArvBin *raiz)
 					}
 				}
 
-				insere_Fila(f, q->esq); // Insere subárvore esq. na fila
+				insere_Fila(f, q->esq); // Insere subï¿½rvore esq. na fila
 
 				if (q->dir != NULL) {
 					if (!alturaJaCalc) {
@@ -259,7 +259,7 @@ int altura_ArvBin_Iter(ArvBin *raiz)
 						alturaJaCalc = 1;
 					}
 				}
-				insere_Fila(f, q->dir); // Insere subárvore dir. na fila             
+				insere_Fila(f, q->dir); // Insere subï¿½rvore dir. na fila             
 			}
 		}
 	} while (!Fila_vazia(f));  
@@ -313,7 +313,7 @@ int consulta_ArvBin_rec(struct NO *raiz, int valor, int *info)
 		return consulta_ArvBin_rec(raiz->esq, valor, info);
 }
 
-/*Implementação das funções de consulta intervalar*/
+/*Implementaï¿½ï¿½o das funï¿½ï¿½es de consulta intervalar*/
 
 int consultaIntervalarArvBinIter(ArvBin *raiz, int valor, int *info)
 {
@@ -377,11 +377,11 @@ void visitaEmLargura(ArvBin *raiz)
 	insere_Fila(f, *raiz); // Insere raiz na fila
 	do {
 		if (consulta_Fila(f, &q)) {
-			remove_Fila(f); // Retira nó q da fila
+			remove_Fila(f); // Retira nï¿½ q da fila
 			if (q != NULL) { 
 				printf("%d, ", q->info);
-				insere_Fila(f, q->esq); // Insere sub-árvore esq. na fila
-				insere_Fila(f, q->dir); // Insere sub-árvore dir. na fila
+				insere_Fila(f, q->esq); // Insere sub-ï¿½rvore esq. na fila
+				insere_Fila(f, q->dir); // Insere sub-ï¿½rvore dir. na fila
 			}
 		}
 	} while (!Fila_vazia(f));  
@@ -403,7 +403,7 @@ void desenheArvore(ArvBin *raiz, char TipoArv)
 		return;
 
 	if (*raiz == NULL) {
-		printf("Árvore vazia!");
+		printf("ï¿½rvore vazia!");
 		return;
 	}
 
@@ -446,19 +446,19 @@ struct NO* searchFatherEmLargura(ArvBin *raiz, int valor)
 	
 	do {
 		if (consulta_Fila(f, &q)) {
-			remove_Fila(f); // Retira nó q da fila
+			remove_Fila(f); // Retira nï¿½ q da fila
 			if (q != NULL) {
 				if (q->esq != NULL && q->esq->info == valor) {
 					noPai = q;
 					break;
 				}
-				insere_Fila(f, q->esq); /* insere sub-árvore esq. na fila */
+				insere_Fila(f, q->esq); /* insere sub-ï¿½rvore esq. na fila */
 
 				if (q->esq != NULL && q->dir->info == valor) {
 					noPai = q;
 					break;
 				}
-				insere_Fila(f, q->dir); /* insere sub-árvore dir. na fila */
+				insere_Fila(f, q->dir); /* insere sub-ï¿½rvore dir. na fila */
 			}
 		}
 	} while (!Fila_vazia(f));
@@ -471,7 +471,7 @@ struct NO* searchFather(ArvBin *raiz, int el)
 	struct NO* p = *raiz;
 	struct NO* prev = NULL; 
 
-	while (p != NULL && p->info != el) {  // Localiza o nó p com a chave el
+	while (p != NULL && p->info != el) {  // Localiza o nï¿½ p com a chave el
 		prev = p;                           
 		if (p->info < el)
 			p = p->dir;
