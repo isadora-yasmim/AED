@@ -313,7 +313,7 @@ int consulta_ArvBin_rec(struct NO *raiz, int valor, int *info)
 		return consulta_ArvBin_rec(raiz->esq, valor, info);
 }
 
-/*Implementa��o das fun��es de consulta intervalar*/
+/*Implementacao das funcoes de consulta intervalar*/
 
 int consultaIntervalarArvBinIter(ArvBin *raiz, int valor, int *antecessor, int *sucessor) {
     if (raiz == NULL || *raiz == NULL)

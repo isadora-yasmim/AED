@@ -1,11 +1,11 @@
 [Editor_1]
-CursorCol=42
-CursorRow=331
-TopLine=323
+CursorCol=1
+CursorRow=317
+TopLine=1
 LeftChar=1
 [Editors]
 Order=2,4,3,0,1
-Focused=1
+Focused=2
 [Editor_0]
 CursorCol=20
 CursorRow=4
