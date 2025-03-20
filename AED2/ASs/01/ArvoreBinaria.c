@@ -315,22 +315,46 @@ int consulta_ArvBin_rec(struct NO *raiz, int valor, int *info)
 
 /*Implementa��o das fun��es de consulta intervalar*/
 
-int consultaIntervalarArvBinIter(ArvBin *raiz, int valor, int *info)
-{
-	if (raiz == NULL)
-		return 0;
-	struct NO* atual = *raiz;
+int consultaIntervalarArvBinIter(ArvBin *raiz, int valor, int *antecessor, int *sucessor) {
+    if (raiz == NULL || *raiz == NULL)
+        return 0;
 
-	
-	return 0;
+    struct NO *atual = *raiz;
+    *antecessor = -1;
+    *sucessor = -1;
+
+    while (atual != NULL) {
+        if (valor == atual->info) {
+            *antecessor = atual->info;
+            *sucessor = atual->info;
+            return 1;
+        } else if (valor < atual->info) {
+            *sucessor = atual->info;
+            atual = atual->esq;
+        } else {
+            *antecessor = atual->info;
+            atual = atual->dir;
+        }
+    }
+
+    return 0;
 }
 
-int consultaIntervalarArvBinRec(struct NO *raiz, int valor, int *info) 
-{
-	if (raiz == NULL)
-		return 0;
+int consultaIntervalarArvBinRec(struct NO *raiz, int valor, int *antecessor, int *sucessor) {
+    if (raiz == NULL)
+        return 0;
 
-
+    if (valor == raiz->info) {
+        *antecessor = raiz->info;
+        *sucessor = raiz->info;
+        return 1;
+    } else if (valor < raiz->info) {
+        *sucessor = raiz->info;
+        return consultaIntervalarArvBinRec(raiz->esq, valor, antecessor, sucessor);
+    } else {
+        *antecessor = raiz->info;
+        return consultaIntervalarArvBinRec(raiz->dir, valor, antecessor, sucessor);
+    }
 }
 
 

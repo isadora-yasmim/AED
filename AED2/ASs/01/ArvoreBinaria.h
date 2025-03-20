@@ -30,4 +30,6 @@ void posOrdem_ArvBin(ArvBin *raiz);
 void visitaEmLargura(ArvBin *raiz);
 int totalNO_ArvBin_Iter(ArvBin *raiz);
 int altura_ArvBin_Iter(ArvBin *raiz);
+int consultaIntervalarArvBinIter(ArvBin *raiz, int valor, int *antecessor, int *sucessor);
+int consultaIntervalarArvBinRec(struct NO *raiz, int valor, int *antecessor, int *sucessor);
 
