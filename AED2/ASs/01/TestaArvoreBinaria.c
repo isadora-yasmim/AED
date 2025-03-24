@@ -14,7 +14,7 @@ int main() {
     for (i = 0; i < N; i++)
         insere_ArvBin(raiz, dados[i]);
 
-    desenheArvore(raiz, 'B'); // Desenho de árvore binária de Busca
+    desenheArvore(raiz, 'B'); // Desenho de ï¿½rvore binï¿½ria de Busca
 
     printf("\n\nPercurso em-ordem:\n");
     emOrdem_ArvBin(raiz);
