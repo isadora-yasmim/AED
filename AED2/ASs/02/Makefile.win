@@ -1,0 +1,35 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.1.1.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = TestaAVL.o ArvoreAVL.o Fila.o $(RES)
+LINKOBJ  = TestaAVL.o ArvoreAVL.o Fila.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc  
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" 
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" 
+BIN      = ProjAVL.exe
+CXXFLAGS = $(CXXINCS)   -std=c99
+CFLAGS   = $(INCS)   -std=c99
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ProjAVL.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "ProjAVL.exe" $(LIBS)
+
+TestaAVL.o: TestaAVL.c
+	$(CPP) -c TestaAVL.c -o TestaAVL.o $(CXXFLAGS)
+
+ArvoreAVL.o: ArvoreAVL.c
+	$(CPP) -c ArvoreAVL.c -o ArvoreAVL.o $(CXXFLAGS)
+
+Fila.o: Fila.c
+	$(CPP) -c Fila.c -o Fila.o $(CXXFLAGS)
